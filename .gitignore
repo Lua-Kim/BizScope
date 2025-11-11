@@ -137,3 +137,6 @@ cython_debug/
 # Local settings
 local.setting.json
 local.settings.json
+
+.python_packages
+bizscope_env

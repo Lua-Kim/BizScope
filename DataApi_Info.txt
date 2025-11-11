@@ -1,0 +1,238 @@
+# PUBLIC_WEATHER_DATA_API_KEY
+# 기상청 API 허브
+# 1.2 시간자료(기간 조회)
+# https://apihub.kma.go.kr/api/typ01/url/kma_sfctm3.php?tm1=201512110100&tm2=201512140000&stn=108&help=1&authKey=4YsHkuwfRHSLB5LsH0R0kA
+
+# PUBLIC_WEATHER_DATA_API_KEY
+# 서울시 열린 데이터 광장
+# 행정동 단위 서울 생활인구(내국인) https://data.seoul.go.kr/dataList/OA-14991/S/1/datasetView.do#
+# http://openapi.seoul.go.kr:8088/71435764654c756336376a6b55784c/xml/SPOP_LOCAL_RESD_DONG/1/5/
+
+# 서울시 열린 데이터 광장
+# 스마트서울 도시데이터 센서(S-DoT) 유동인구 측정 정보
+#http://openapi.seoul.go.kr:8088/71435764654c756336376a6b55784c/xml/IotVdata018/1/5/
+
+# 경기도 행정기관 읍면동 단위의 행정동 및 법정동 코드표
+# https://openapi.gg.go.kr/TBGGINSTCODEM
+
+
+기상청 API 허브
+요청인자
+인자명	의미	설명
+tm1
+
+년월일시분(KST)년월일(KST)
+
+기간: 시작시간 또는 시작일 (없으면 현재시간)
+
+tm2
+
+년월일시분(KST)년월일(KST)
+
+기간: 종료시간 또는 종료일 (없으면 현재시간)
+* 최대 31일 조회 가능
+
+stn
+
+지점번호
+
+해당 지점들(:로 구분)의 정보 표출 (0 이거나 없으면 전체지점)
+
+help
+
+도움말추가
+
+1 이면 필드에 대한 약간의 도움말 추가 (0 이거나 없으면 없음)
+
+authKey
+
+인증키
+
+발급된 API 인증키
+
+출력결과
+변수명	의미(단위)	변수명	의미(단위)
+TM
+
+관측시각 (KST)
+
+STN
+
+국내 지점번호
+
+WD
+
+풍향 (36방위)
+
+WS
+
+풍속 (m/s)
+
+GST_WD
+
+돌풍향 (36방위)
+
+GST_WS
+
+돌풍속 (m/s)
+
+GST_TM
+
+돌풍속이 관측된 시각 (시분)
+
+PA
+
+현지기압 (hPa)
+
+PS
+
+해면기압 (hPa)
+
+PT
+
+기압변화경향 (Code 0200)
+
+PR
+
+기압변화량 (hPa)
+
+TA
+
+기온 (C)
+
+TD
+
+이슬점온도 (C)
+
+HM
+
+상대습도 (%)
+
+PV
+
+수증기압 (hPa)
+
+RN
+
+강수량 (mm)
+
+RN_DAY
+
+위 관측시간까지의 일강수량 (mm)
+
+RN_INT
+
+강수강도 (mm/h)
+
+SD_HR3
+
+3시간 신적설 (cm)
+
+SD_DAY
+
+일 신적설 (cm)
+
+SD_TOT
+
+적설 (cm)
+
+WC
+
+GTS 현재일기 (Code 4677)
+
+WP
+
+GTS 과거일기 (Code 4561)
+
+WW
+
+국내식 일기코드 (문자열 22개)
+
+CA_TOT
+
+전운량 (1/10)
+
+CA_MID
+
+중하층운량 (1/10)
+
+CH_MIN
+
+최저운고 (100m)
+
+CT
+
+운형 (문자열 8개)
+
+CT_TOP
+
+GTS 상층운형 (Code 0509)
+
+CT_MID
+
+GTS 중층운형 (Code 0515)
+
+CT_LOW
+
+GTS 하층운형 (Code 0513)
+
+VS
+
+시정 (10m)
+
+SS
+
+일조 (hr)
+
+SI
+
+일사 (MJ/m2)
+
+ST_GD
+
+지면상태 코드 (코드는 관측정책과 문의)
+종료: 2016.7.1. 00시
+
+TS
+
+지면온도 (C)
+
+TE_005
+
+5cm 지중온도 (C)
+
+TE_01
+
+10cm 지중온도 (C)
+
+TE_02
+
+20cm 지중온도 (C)
+
+TE_03
+
+30cm 지중온도 (C)
+
+ST_SEA
+
+해면상태 코드 (코드는 관측정책과 문의)
+
+WH
+
+파고 (m)
+
+BF
+
+Beaufart 최대풍력(GTS코드)
+
+IR
+
+강수자료
+
+IX
+
+유인관측/무인관측
+
+RN_JUN
+
+일강수량 (mm)
