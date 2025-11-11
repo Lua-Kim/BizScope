@@ -6,11 +6,11 @@
 # PUBLIC_WEATHER_DATA_API_KEY
 # 서울시 열린 데이터 광장
 # 행정동 단위 서울 생활인구(내국인) https://data.seoul.go.kr/dataList/OA-14991/S/1/datasetView.do#
-# http://openapi.seoul.go.kr:8088/71435764654c756336376a6b55784c/xml/SPOP_LOCAL_RESD_DONG/1/5/
+# http://openapi.seoul.go.kr:8088/71435764654c756336376a6b55784c/json/SPOP_LOCAL_RESD_DONG/1/5/
 
 # 서울시 열린 데이터 광장
 # 스마트서울 도시데이터 센서(S-DoT) 유동인구 측정 정보
-#http://openapi.seoul.go.kr:8088/71435764654c756336376a6b55784c/xml/IotVdata018/1/5/
+# http://openapi.seoul.go.kr:8088/71435764654c756336376a6b55784c/json/IotVdata018/1/10/
 
 # 경기도 행정기관 읍면동 단위의 행정동 및 법정동 코드표
 # https://openapi.gg.go.kr/TBGGINSTCODEM
@@ -236,3 +236,9 @@ IX
 RN_JUN
 
 일강수량 (mm)
+
+# 경기도 행정기관 읍면동 단위의 행정동 및 법정동 코드표
+# API Endpoint: https://openapi.gg.go.kr/TBGGINSTCODEM
+# Environment Variables:
+# GGINSTCODE_API_ENDPOINT = https://openapi.gg.go.kr/TBGGINSTCODEM
+# GGINSTCODE_API_KEY = YOUR_API_KEY
