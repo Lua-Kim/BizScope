@@ -3,6 +3,7 @@ import datetime
 import logging
 import os
 import requests
+import json
 import azure.functions as func
 
 # Explicitly configure logging to output to console
@@ -145,21 +146,30 @@ def main(timer_trigger1: func.TimerRequest, outputEventHub: func.Out[str]) -> No
 
     seoul_population_data = get_seoul_population_data()
     if seoul_population_data:
-        logging.info("서울 생활인구 데이터: %s", seoul_population_data)
+        seoul_population_json = json.dumps(seoul_population_data)
+        logging.info("서울 생활인구 데이터 Event Hub로 전송: %s", seoul_population_json)
+        outputEventHub.set(seoul_population_json)
+        logging.info("서울 생활인구 데이터 Event Hub로 전송 완료")
     else:
-        logging.warning("서울 생활인구 데이터를 가져오지 못했습니다.")
+        logging.warning("서울 생활인구 데이터를 가져오지 못하여 Event Hub로 전송하지 않습니다.")
 
     sdot_floating_population_data = get_sdot_floating_population_data()
     if sdot_floating_population_data:
-        logging.info("스마트서울 도시데이터 센서(S-DoT) 유동인구 데이터: %s", sdot_floating_population_data)
+        sdot_floating_population_json = json.dumps(sdot_floating_population_data)
+        logging.info("스마트서울 도시데이터 센서(S-DoT) 유동인구 데이터 Event Hub로 전송: %s", sdot_floating_population_json)
+        outputEventHub.set(sdot_floating_population_json)
+        logging.info("스마트서울 도시데이터 센서(S-DoT) 유동인구 데이터 Event Hub로 전송 완료")
     else:
-        logging.warning("스마트서울 도시데이터 센서(S-DoT) 유동인구 데이터를 가져오지 못했습니다.")
+        logging.warning("스마트서울 도시데이터 센서(S-DoT) 유동인구 데이터를 가져오지 못하여 Event Hub로 전송하지 않습니다.")
 
     administrative_district_codes_data = get_administrative_district_codes()
     if administrative_district_codes_data:
-        logging.info("경기도 행정기관 읍면동 단위의 행정동 및 법정동 코드표 데이터: %s", administrative_district_codes_data)
+        administrative_district_codes_json = json.dumps(administrative_district_codes_data)
+        logging.info("경기도 행정기관 읍면동 단위의 행정동 및 법정동 코드표 데이터 Event Hub로 전송: %s", administrative_district_codes_json)
+        outputEventHub.set(administrative_district_codes_json)
+        logging.info("경기도 행정기관 읍면동 단위의 행정동 및 법정동 코드표 데이터 Event Hub로 전송 완료")
     else:
-        logging.warning("경기도 행정기관 읍면동 단위의 행정동 및 법정동 코드표 데이터를 가져오지 못했습니다.")
+        logging.warning("경기도 행정기관 읍면동 단위의 행정동 및 법정동 코드표 데이터를 가져오지 못하여 Event Hub로 전송하지 않습니다.")
 
 
 
